@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Primary
-@ConditionalOnExpression("${pizza-inventory.mock:false}==true")
+@ConditionalOnExpression("${pizza.inventory.mock:false}==true")
 public class MockInventoryService implements PizzaInventoryService {
 
   @Override
