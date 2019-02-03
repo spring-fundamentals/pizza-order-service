@@ -1,29 +1,25 @@
 package com.zuhelke.springfundamentals.pizzaorderservice.pizzamenu.controller;
 
-import static org.mockito.Mockito.doReturn;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.zuhelke.springfundamentals.pizzaorderservice.pizzamenu.service.PizzaMenuService;
-import java.util.Optional;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.json.JacksonTester;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(PizzaMenuController.class)
+@SpringBootTest
+@AutoConfigureMockMvc
 public class PizzaMenuControllerTest {
 
-  @MockBean
-  private PizzaMenuService pizzaMenuService;
 
   @Autowired
   private MockMvc mockMvc;
@@ -46,23 +42,21 @@ public class PizzaMenuControllerTest {
 
   @Test
   public void knownId_getById_okStatus() throws Exception {
-    String knownId = "100";
-    doReturn(Optional.of(new PizzaMenuItemDto(knownId, "Pizza Funghi", 13))).when(pizzaMenuService).findById(knownId);
+    String knownId = "2";
 
-    mockMvc.perform(get("/pizzas/" + knownId))
+    mockMvc.perform(get("/pizzas/{id}", knownId))
 
         .andExpect(status().isOk())
-        .andExpect(content().json("{\"name\":\"Pizza Funghi\",\"price\":13.0}"));
+        .andExpect(content().json("{\"name\":\"Pizza Salami\",\"price\":18.0}"));
   }
 
   @Test
   public void knownId_getById_correctObject() throws Exception {
-    String knownId = "100";
-    doReturn(Optional.of(new PizzaMenuItemDto(knownId, "Pizza Funghi", 13))).when(pizzaMenuService).findById(knownId);
+    String knownId = "2";
 
-    mockMvc.perform(get("/pizzas/" + knownId))
+    mockMvc.perform(get("/pizzas/{id}", knownId))
 
         .andExpect(status().isOk())
-        .andExpect(content().json(json.write(new PizzaMenuItemDto(knownId, "Pizza Funghi", 13)).getJson()));
+        .andExpect(content().json(json.write(new PizzaMenuItemDto(knownId, "Pizza Salami", 18)).getJson()));
   }
 }
