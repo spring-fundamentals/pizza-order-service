@@ -7,13 +7,18 @@ import com.zuhelke.springfundamentals.pizzaorderservice.pizzamenu.dataaccess.Piz
 import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.dataaccess.PizzaOrderRepository;
 import com.zuhelke.springfundamentals.pizzaorderservice.pizzamenu.domain.PizzaMenuItem;
 import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile({"default", "dev"})
+@Profile({"default", "dev", "cloud"})
 public class TestDataGenerator implements CommandLineRunner {
+
+  Logger logger = LoggerFactory.getLogger(TestDataGenerator.class);
+
 
   private final PizzaMenuRepository pizzaMenuRepository;
   private final PizzaOrderRepository pizzaOrderRepository;
@@ -25,8 +30,19 @@ public class TestDataGenerator implements CommandLineRunner {
 
   @Override
   public void run(String... args) {
-    createPizzaMenuTestData();
 
+    logger.info("generate test data ");
+
+    createPizzaMenuTestData();
+    createPizzaOrderTestData();
+  }
+
+  private void createPizzaMenuTestData() {
+    pizzaMenuRepository.save(new PizzaMenuItem("1", "Pizza Margherita", 15));
+    pizzaMenuRepository.save(new PizzaMenuItem("2", "Pizza Salami", 18));
+  }
+
+  private void createPizzaOrderTestData() {
     pizzaOrderRepository.save(new PizzaOrder(asList(
         new PizzaOrderItem("Pizza Salami", 2),
         new PizzaOrderItem("Pizza Margherita", 2)
@@ -36,10 +52,5 @@ public class TestDataGenerator implements CommandLineRunner {
         new PizzaOrderItem("Pizza Funghi", 3),
         new PizzaOrderItem("Pizza Salami", 1)
     )));
-  }
-
-  private void createPizzaMenuTestData() {
-    pizzaMenuRepository.save(new PizzaMenuItem("1", "Pizza Margherita", 15));
-    pizzaMenuRepository.save(new PizzaMenuItem("2", "Pizza Salami", 18));
   }
 }

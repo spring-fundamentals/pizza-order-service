@@ -16,7 +16,7 @@ public class SwaggerConfiguration {
   public Docket api() {
     return new Docket(DocumentationType.SWAGGER_2)
         .select()
-        .paths(PathSelectors.ant("/pizzas**"))
+        .paths(PathSelectors.ant("/pizza**"))
         .build()
         .apiInfo(new ApiInfoBuilder()
             .title("Pizza Order API")

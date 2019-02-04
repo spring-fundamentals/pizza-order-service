@@ -1,0 +1,8 @@
+applications:
+  - name: pizza-order-service
+    memory: 1G
+    path: build/libs/pizza-order-service-0.0.1-SNAPSHOT.jar
+    health-check-type: http
+    health-check-http-endpoint: /actuator/health
+    routes:
+      - route: pizza-order-service.scapp.io
