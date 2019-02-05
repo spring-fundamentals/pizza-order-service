@@ -17,8 +17,7 @@ import org.springframework.stereotype.Component;
 @Profile({"default", "dev", "cloud"})
 public class TestDataGenerator implements CommandLineRunner {
 
-  Logger logger = LoggerFactory.getLogger(TestDataGenerator.class);
-
+  private static final Logger logger = LoggerFactory.getLogger(TestDataGenerator.class);
 
   private final PizzaMenuRepository pizzaMenuRepository;
   private final PizzaOrderRepository pizzaOrderRepository;

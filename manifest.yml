@@ -6,3 +6,5 @@ applications:
     health-check-http-endpoint: /actuator/health
     routes:
       - route: pizza-order-service.scapp.io
+    services:
+      - pizza-order-service-db
