@@ -47,7 +47,7 @@ public class PizzaMenuControllerTest {
     mockMvc.perform(get("/pizzas/{id}", knownId))
 
         .andExpect(status().isOk())
-        .andExpect(content().json("{\"name\":\"Pizza Salami\",\"price\":18.0}"));
+        .andExpect(content().json("{\"id\": \"2\",  \"name\": \"Pizza Salami\", \"price\": 18.0}", true));
   }
 
   @Test

@@ -30,10 +30,10 @@ public class PizzaOrderControllerTest {
   @MockBean
   private PizzaOrderService pizzaOrderService;
 
-  private JacksonTester<List<PizzaOrderDto>> json;
+  private JacksonTester<List<PizzaOrderDto>> jacksonTester;
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp() {
     ObjectMapper objectMapper = new ObjectMapper();
     JacksonTester.initFields(this, objectMapper);
   }
@@ -51,6 +51,7 @@ public class PizzaOrderControllerTest {
             + "  \"orderId\": \"2\" ,\n"
             + "  \"orderItems\": []\n"
             + "}]"));
+
   }
 
   @Test
@@ -59,6 +60,6 @@ public class PizzaOrderControllerTest {
 
     mockMvc.perform(get("/pizza-orders"))
         .andExpect(status().isOk())
-        .andExpect(content().json(json.write(asList(new PizzaOrderDto("1", emptyList()), new PizzaOrderDto("2", emptyList()))).getJson()));
+        .andExpect(content().json(jacksonTester.write(asList(new PizzaOrderDto("1", emptyList()), new PizzaOrderDto("2", emptyList()))).getJson()));
   }
 }
