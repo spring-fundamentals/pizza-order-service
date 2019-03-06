@@ -1,4 +1,4 @@
-package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.controller;
+package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.api;
 
 import java.util.List;
 

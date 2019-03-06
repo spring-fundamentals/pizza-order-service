@@ -1,4 +1,4 @@
-package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.controller;
+package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.api;
 
 import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.service.PizzaOrderService;
 import java.util.List;
@@ -27,13 +27,13 @@ public class PizzaOrderController {
         return pizzaOrderService.findAll();
     }
 
-    @PostMapping("/pizza-orders")
-    public PizzaOrderDto create(@RequestBody CreatePizzaOrderDto createPizzaOrderDto) {
-        return pizzaOrderService.create(createPizzaOrderDto);
-    }
-
     @GetMapping("/pizza-orders/{id}")
     public PizzaOrderDto getById(@PathVariable String id) {
         return pizzaOrderService.findById(id);
+    }
+
+    @PostMapping("/pizza-orders")
+    public PizzaOrderDto create(@RequestBody CreatePizzaOrderDto createPizzaOrderDto) {
+        return pizzaOrderService.create(createPizzaOrderDto);
     }
 }

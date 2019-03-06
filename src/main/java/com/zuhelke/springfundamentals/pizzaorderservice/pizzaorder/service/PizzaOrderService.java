@@ -2,43 +2,32 @@ package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.service;
 
 import static java.util.stream.Collectors.toList;
 
-import com.sun.media.sound.MidiUtils;
-import com.zuhelke.springfundamentals.pizzaorderservice.common.exceptionhandling.ResourceNotFoundException;
-import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.controller.CreatePizzaOrderDto;
-import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.dataaccess.PizzaInventoryService;
-import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrderItem;
-import com.zuhelke.springfundamentals.pizzaorderservice.common.exceptionhandling.ApplicationException;
-import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.controller.PizzaOrderDto;
-import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.controller.PizzaOrderItemDto;
+import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.api.CreatePizzaOrderDto;
+import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.api.PizzaOrderDto;
+import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.api.PizzaOrderItemDto;
 import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.dataaccess.PizzaOrderRepository;
 import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
+import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrderItem;
 import java.util.List;
-import java.util.Optional;
+import java.util.UUID;
+import java.util.stream.Stream;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PizzaOrderService {
 
-  private final PizzaInventoryService pizzaInventoryService;
   private final PizzaOrderRepository pizzaOrderRepository;
 
-  public PizzaOrderService(PizzaInventoryService pizzaInventoryService,
-      PizzaOrderRepository pizzaOrderRepository) {
-    this.pizzaInventoryService = pizzaInventoryService;
+  public PizzaOrderService(PizzaOrderRepository pizzaOrderRepository) {
     this.pizzaOrderRepository = pizzaOrderRepository;
   }
 
   public PizzaOrderDto create(CreatePizzaOrderDto createPizzaOrderDto) {
-    for (PizzaOrderItemDto orderItem : createPizzaOrderDto.getOrderItems()) {
-      boolean isPizzaAvailable = pizzaInventoryService.isPizzaAvailable(orderItem.getName());
-      if (!isPizzaAvailable) {
-        throw new ApplicationException(orderItem.getName() + " is no longer available. Please choose another dish and place your order again.");
-      }
-    }
+    PizzaOrder newPizzaOrder = mapToPizzaOrder(createPizzaOrderDto);
 
-    PizzaOrder newPizzaOrder = pizzaOrderRepository.save(mapPizzaOrderFromDto(createPizzaOrderDto));
+    PizzaOrder createdPizzaOrder = pizzaOrderRepository.save(newPizzaOrder);
 
-    return mapToPizzaOrderDto(newPizzaOrder);
+    return mapToPizzaOrderDto(createdPizzaOrder);
   }
 
   public List<PizzaOrderDto> findAll() {
@@ -48,27 +37,30 @@ public class PizzaOrderService {
   }
 
   public PizzaOrderDto findById(String id) {
-    return pizzaOrderRepository.findById(id)
+    return pizzaOrderRepository.findById(UUID.fromString(id))
         .map(this::mapToPizzaOrderDto)
-        .orElseThrow(ResourceNotFoundException::new);
+        .orElseThrow(IllegalArgumentException::new);
   }
 
   public List<PizzaOrderDto> findAllWithContainingPizza(String containingPizzaName) {
     return this.pizzaOrderRepository.findAll().stream()
-        .filter(pizzaOrder -> pizzaOrder.getOrderItems().stream()
-            .anyMatch(item -> item.getName().toLowerCase().contains(containingPizzaName.toLowerCase()))
-        )
+        .filter(pizzaOrder -> pizzaOrder.getOrderItems().stream().anyMatch(item -> item.getName().toLowerCase().contains(containingPizzaName.toLowerCase())))
         .map(this::mapToPizzaOrderDto)
         .collect(toList());
   }
 
   private PizzaOrderDto mapToPizzaOrderDto(PizzaOrder pizzaOrder) {
+    Stream<PizzaOrderItemDto> orderItems = pizzaOrder.getOrderItems().stream()
+        .map(orderItem -> new PizzaOrderItemDto(orderItem.getName(), orderItem.getQuantity()));
     return new PizzaOrderDto(pizzaOrder.getId().toString(),
-        pizzaOrder.getOrderItems().stream().map(orderItem -> new PizzaOrderItemDto(orderItem.getName(), orderItem.getQuantity())).collect(toList()));
+        orderItems.collect(toList()));
   }
 
-  private PizzaOrder mapPizzaOrderFromDto(CreatePizzaOrderDto createPizzaOrderDto) {
-    return new PizzaOrder(
-        createPizzaOrderDto.getOrderItems().stream().map(orderItem -> new PizzaOrderItem(orderItem.getName(), orderItem.getQuantity())).collect(toList()));
+  private PizzaOrder mapToPizzaOrder(CreatePizzaOrderDto createPizzaOrderDto) {
+    List<PizzaOrderItem> orderItems = createPizzaOrderDto.getOrderItems().stream()
+        .map(orderItem -> new PizzaOrderItem(orderItem.getName(), orderItem.getQuantity()))
+        .collect(toList());
+
+    return new PizzaOrder(orderItems);
   }
 }

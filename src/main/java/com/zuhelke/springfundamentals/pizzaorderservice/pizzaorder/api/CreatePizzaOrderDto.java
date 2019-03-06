@@ -1,14 +1,10 @@
-package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.controller;
+package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.api;
 
 import java.util.List;
 
 public class CreatePizzaOrderDto {
 
     private List<PizzaOrderItemDto> orderItems;
-
-    public CreatePizzaOrderDto(List<PizzaOrderItemDto> orderItems) {
-        this.orderItems = orderItems;
-    }
 
     private CreatePizzaOrderDto() {
     }

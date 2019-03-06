@@ -1,0 +1,523 @@
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Parma",
+      "quantity": 101
+    }
+  ]
+}
+
+<> 2019-03-06T093402.200.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Parma",
+      "quantity": 101
+    }
+  ]
+}
+
+<> 2019-03-06T093353.500.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Parma",
+      "quantity": 101
+    }
+  ]
+}
+
+<> 2019-03-06T093318.500.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Parma",
+      "quantity": 101
+    }
+  ]
+}
+
+<> 2019-03-06T093201.500.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Parma",
+      "quantity": 101
+    }
+  ]
+}
+
+<> 2019-03-06T093152.500.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Parma",
+      "quantity": 101
+    }
+  ]
+}
+
+<> 2019-03-06T093100.500.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Parma",
+      "quantity": 101
+    }
+  ]
+}
+
+<> 2019-02-25T094011.500.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Parma",
+      "quantity": 101
+    }
+  ]
+}
+
+<> 2019-02-25T093345.500.json
+
+###
+
+POST https://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Parma",
+      "quantity": 101
+    }
+  ]
+}
+
+###
+
+POST https://pizza-order-service.scapp.io/pizzas
+Content-Type: application/json
+
+{
+  "id": "10",
+  "name": "Pizza Salami",
+  "price": 20.0
+}
+
+<> 2019-02-24T062235.200.json
+
+###
+
+POST https://pizza-order-service.scapp.io/pizzas
+Content-Type: application/json
+
+{
+  "id": "10",
+  "name": "Pizza Salami",
+  "price": 20.0
+}
+
+<> 2019-02-24T062000.200.json
+
+###
+
+GET http://localhost:8080/pizzas
+
+<> 2019-02-24T014903.200.json
+
+###
+
+POST http://localhost:8080/pizzas
+Content-Type: application/json
+
+{
+  "id": "10",
+  "name": "Pizza Salami",
+  "price": 20.0
+}
+
+<> 2019-02-24T014847.200.json
+
+###
+
+POST http://localhost:8080/pizzas
+Content-Type: application/json
+
+{
+  "id": "10",
+  "name": "Pizza Salami",
+  "price": 20.0
+}
+
+<> 2019-02-24T014831.400.json
+
+###
+
+POST http://localhost:8080/pizzas
+Content-Type: application/json
+
+{
+  "id": "10",
+  "name": "Pizza Salami",
+  "price": 20.0
+}
+
+<> 2019-02-24T014809.400.json
+
+###
+
+POST https://localhost:8080/pizzas
+Content-Type: application/json
+
+{
+  "id": "10",
+  "name": "Pizza Salami",
+  "price": 20.0
+}
+
+###
+
+POST https://pizza-order-service.scapp.io/pizzas
+Content-Type: application/json
+
+{
+  "id": "10",
+  "name": "Pizza Salami",
+  "price": 20.0
+}
+
+<> 2019-02-24T013327.400.json
+
+###
+
+POST https://pizza-order-service.scapp.io/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Parma",
+      "quantity": 101
+    }
+  ]
+}
+
+<> 2019-02-06T121548.200.json
+
+###
+
+POST https://pizza-order-service.scapp.io/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Funghi",
+      "quantity": 10
+    }
+  ]
+}
+
+<> 2019-02-06T101527.200.json
+
+###
+
+GET https://pizza-order-service.scapp.io/pizza-orders
+
+<> 2019-02-05T103416.200.json
+
+###
+
+POST https://pizza-order-service.scapp.io/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Salami",
+      "quantity": 1
+    }
+  ]
+}
+
+<> 2019-02-05T103409.200.json
+
+###
+
+GET https://pizza-order-service.scapp.io/pizza-orders
+
+<> 2019-02-05T103344.200.json
+
+###
+
+GET http://localhost:8080/pizza-orders
+
+<> 2019-01-28T012642.200.json
+
+###
+
+GET http://localhost:8080/pizza-orders
+
+<> 2019-01-28T111408.200.json
+
+###
+
+GET http://localhost:8080/pizza-orders
+
+<> 2019-01-28T111301.200.json
+
+###
+
+GET http://localhost:8080/pizza-orders
+
+<> 2019-01-28T111149.200.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Salami",
+      "quantity": 1
+    }
+  ]
+}
+
+<> 2019-01-27T092514.200.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Salami",
+      "quantity": 1
+    }
+  ]
+}
+
+<> 2019-01-27T092424.200.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Salami",
+      "quantity": 1
+    }
+  ]
+}
+
+<> 2019-01-27T090846.200.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Salami",
+      "quantity": 1
+    }
+  ]
+}
+
+<> 2019-01-27T090717.200.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Salami",
+      "quantity": 1
+    }
+  ]
+}
+
+<> 2019-01-27T081207.200.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Salami",
+      "quantity": 1
+    }
+  ]
+}
+
+<> 2019-01-27T080555.200.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "orderItems": [
+    {
+      "name": "Pizza Salami",
+      "quantity": 1
+    }
+  ]
+}
+
+<> 2019-01-27T080505.200.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "oderItems": [
+    {
+      "name": "Pizza Salami",
+      "quantity": 1
+    }
+  ]
+}
+
+<> 2019-01-27T080409.500.json
+
+###
+
+POST http://localhost:8080/pizza-orders
+Content-Type: application/json
+
+{
+  "oderItems": [
+    {
+      "name": "Pizza Salami",
+      "quantity": 1
+    }
+  ]
+}
+
+<> 2019-01-27T080223.500.json
+
+###
+
+GET http://localhost:8080/pizzas
+
+<> 2019-01-26T080113.404.json
+
+###
+
+GET http://localhost:8080/pizzas
+
+<> 2019-01-26T024112.200.json
+
+###
+
+POST http://localhost:8090/pizza-order
+Content-Type: application/json
+
+{
+  "name": "Pizza Salami",
+  "ingredients": ["Salami", "Cheese"]
+}
+
+<> 2019-01-21T114247.200.json
+
+###
+
+POST http://localhost:8090/pizza-order
+Content-Type: application/json
+
+{
+  "name": "Pizza Salami",
+  "ingredients": ["Salami", "Cheese"]
+}
+
+<> 2019-01-21T114027.200.json
+
+###
+
+POST http://localhost:8090/pizza-order
+Content-Type: application/json
+
+{
+  "name": "Pizza Salami",
+  "ingredients": ["Salami", "Cheese"]
+}
+
+<> 2019-01-21T113933.200.json
+
+###
+
+POST http://localhost:8080/greetings
+Content-Type: application/json
+
+{
+  "name": "Pizza Salami",
+  "ingredients": ["Salami", "Cheese"]
+}
+
+###
+
