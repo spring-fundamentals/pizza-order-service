@@ -10,7 +10,6 @@ import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaO
 import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrderItem;
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Stream;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -50,10 +49,11 @@ public class PizzaOrderService {
   }
 
   private PizzaOrderDto mapToPizzaOrderDto(PizzaOrder pizzaOrder) {
-    Stream<PizzaOrderItemDto> orderItems = pizzaOrder.getOrderItems().stream()
-        .map(orderItem -> new PizzaOrderItemDto(orderItem.getName(), orderItem.getQuantity()));
-    return new PizzaOrderDto(pizzaOrder.getId().toString(),
-        orderItems.collect(toList()));
+    List<PizzaOrderItemDto> orderItems = pizzaOrder.getOrderItems().stream()
+        .map(orderItem -> new PizzaOrderItemDto(orderItem.getName(), orderItem.getQuantity()))
+        .collect(toList());
+
+    return new PizzaOrderDto(pizzaOrder.getId().toString(), orderItems);
   }
 
   private PizzaOrder mapToPizzaOrder(CreatePizzaOrderDto createPizzaOrderDto) {
