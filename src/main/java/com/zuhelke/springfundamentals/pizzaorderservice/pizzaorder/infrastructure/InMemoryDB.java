@@ -1,4 +1,4 @@
-package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.dataaccess;
+package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.infrastructure;
 
 import static java.util.Arrays.asList;
 

@@ -5,9 +5,10 @@ import static java.util.stream.Collectors.toList;
 import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.api.CreatePizzaOrderDto;
 import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.api.PizzaOrderDto;
 import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.api.PizzaOrderItemDto;
-import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.dataaccess.PizzaOrderRepository;
 import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
 import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrderItem;
+import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.infrastructure.PizzaInventoryClient;
+import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.infrastructure.PizzaOrderRepository;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.stereotype.Service;
@@ -16,12 +17,16 @@ import org.springframework.stereotype.Service;
 public class PizzaOrderService {
 
   private final PizzaOrderRepository pizzaOrderRepository;
+  private final PizzaInventoryClient pizzaInventoryClient;
 
-  public PizzaOrderService(PizzaOrderRepository pizzaOrderRepository) {
+  public PizzaOrderService(PizzaOrderRepository pizzaOrderRepository, PizzaInventoryClient pizzaInventoryClient) {
     this.pizzaOrderRepository = pizzaOrderRepository;
+    this.pizzaInventoryClient = pizzaInventoryClient;
   }
 
   public PizzaOrderDto create(CreatePizzaOrderDto createPizzaOrderDto) {
+    assertAllOrderedPizzasAreAvailable(createPizzaOrderDto);
+
     PizzaOrder newPizzaOrder = mapToPizzaOrder(createPizzaOrderDto);
 
     PizzaOrder createdPizzaOrder = pizzaOrderRepository.save(newPizzaOrder);
@@ -46,6 +51,14 @@ public class PizzaOrderService {
         .filter(pizzaOrder -> pizzaOrder.getOrderItems().stream().anyMatch(item -> item.getName().toLowerCase().contains(containingPizzaName.toLowerCase())))
         .map(this::mapToPizzaOrderDto)
         .collect(toList());
+  }
+
+  private void assertAllOrderedPizzasAreAvailable(CreatePizzaOrderDto createPizzaOrderDto) {
+    for (PizzaOrderItemDto orderItem : createPizzaOrderDto.getOrderItems()) {
+      if (!pizzaInventoryClient.isAvailable(orderItem.getName())) {
+        throw new IllegalStateException();
+      }
+    }
   }
 
   private PizzaOrderDto mapToPizzaOrderDto(PizzaOrder pizzaOrder) {

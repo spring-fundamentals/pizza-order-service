@@ -1,4 +1,4 @@
-package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.dataaccess;
+package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.infrastructure;
 
 import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
 import java.util.List;
