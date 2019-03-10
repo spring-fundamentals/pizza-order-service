@@ -20,4 +20,8 @@ public class PizzaOrder {
   public List<PizzaOrderItem> getOrderItems() {
     return orderItems;
   }
+
+  public int getTotalQuantityOfOrderedPizzas() {
+    return orderItems.stream().mapToInt(PizzaOrderItem::getQuantity).sum();
+  }
 }
