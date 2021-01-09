@@ -1,6 +1,6 @@
-package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.api;
+package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.api;
 
-import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.service.PizzaOrderService;
+import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.service.PizzaOrderService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.web.bind.annotation.GetMapping;

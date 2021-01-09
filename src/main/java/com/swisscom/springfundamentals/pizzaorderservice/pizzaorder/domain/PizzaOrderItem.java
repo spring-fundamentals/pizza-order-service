@@ -1,4 +1,4 @@
-package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.domain;
+package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain;
 
 import java.util.UUID;
 
