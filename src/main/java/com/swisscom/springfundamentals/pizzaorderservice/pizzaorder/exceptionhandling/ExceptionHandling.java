@@ -1,4 +1,4 @@
-package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.exceptionhandling;
+package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.exceptionhandling;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.infrastructure;
+package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.infrastructure;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.stereotype.Service;

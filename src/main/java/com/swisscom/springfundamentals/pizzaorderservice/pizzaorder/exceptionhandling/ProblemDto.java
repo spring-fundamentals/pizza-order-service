@@ -1,4 +1,4 @@
-package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.exceptionhandling;
+package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.exceptionhandling;
 
 public class ProblemDto {
 

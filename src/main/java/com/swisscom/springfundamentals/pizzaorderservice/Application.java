@@ -1,4 +1,4 @@
-package com.zuhelke.springfundamentals.pizzaorderservice;
+package com.swisscom.springfundamentals.pizzaorderservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

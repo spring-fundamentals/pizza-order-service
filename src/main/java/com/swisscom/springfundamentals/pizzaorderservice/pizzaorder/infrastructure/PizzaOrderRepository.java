@@ -1,6 +1,6 @@
-package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.infrastructure;
+package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.infrastructure;
 
-import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
+import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;

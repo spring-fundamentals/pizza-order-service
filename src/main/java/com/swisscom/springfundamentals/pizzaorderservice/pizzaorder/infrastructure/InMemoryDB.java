@@ -1,9 +1,9 @@
-package com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.infrastructure;
+package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.infrastructure;
 
 import static java.util.Arrays.asList;
 
-import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
-import com.zuhelke.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrderItem;
+import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
+import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrderItem;
 import java.util.ArrayList;
 import java.util.List;
 
