@@ -2,9 +2,9 @@ plugins { id 'java' }
 plugins { id 'org.springframework.boot' version '2.1.2.RELEASE' }
 plugins { id 'io.spring.dependency-management' version '1.0.6.RELEASE' }
 
-group = 'ch.mare.springtraining'
+group = 'com.swisscom.springfundamentals'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
