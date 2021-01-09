@@ -10,17 +10,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.service.PizzaOrderService;
 import java.util.List;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-@RunWith(SpringRunner.class)
 @WebMvcTest(PizzaOrderController.class)
 public class PizzaOrderControllerTest {
 
@@ -32,7 +29,7 @@ public class PizzaOrderControllerTest {
 
   private JacksonTester<List<PizzaOrderDto>> jacksonTester;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     ObjectMapper objectMapper = new ObjectMapper();
     JacksonTester.initFields(this, objectMapper);
