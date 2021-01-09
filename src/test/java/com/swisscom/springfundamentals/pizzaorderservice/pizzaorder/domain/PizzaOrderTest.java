@@ -1,9 +1,9 @@
 package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain;
 
+import org.junit.jupiter.api.Test;
+
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
-
-import org.junit.Test;
 
 public class PizzaOrderTest {
 
