@@ -1,9 +1,5 @@
 package com.swisscom.springfundamentals.pizzaorderservice.common.testdata;
 
-import static java.util.Arrays.asList;
-
-import com.swisscom.springfundamentals.pizzaorderservice.pizzamenu.dataaccess.PizzaMenuRepository;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzamenu.domain.PizzaMenuItem;
 import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.dataaccess.PizzaOrderRepository;
 import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
 import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrderItem;
@@ -13,17 +9,17 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
+import static java.util.Arrays.asList;
+
 @Component
 @Profile({"default", "dev"})
 public class TestDataGenerator implements CommandLineRunner {
 
   private static final Logger logger = LoggerFactory.getLogger(TestDataGenerator.class);
 
-  private final PizzaMenuRepository pizzaMenuRepository;
   private final PizzaOrderRepository pizzaOrderRepository;
 
-  public TestDataGenerator(PizzaMenuRepository pizzaMenuRepository, PizzaOrderRepository pizzaOrderRepository) {
-    this.pizzaMenuRepository = pizzaMenuRepository;
+  public TestDataGenerator(PizzaOrderRepository pizzaOrderRepository) {
     this.pizzaOrderRepository = pizzaOrderRepository;
   }
 
@@ -32,13 +28,7 @@ public class TestDataGenerator implements CommandLineRunner {
 
     logger.info("generate test data ");
 
-    createPizzaMenuTestData();
     createPizzaOrderTestData();
-  }
-
-  private void createPizzaMenuTestData() {
-    pizzaMenuRepository.save(new PizzaMenuItem("1", "Pizza Margherita", 15));
-    pizzaMenuRepository.save(new PizzaMenuItem("2", "Pizza Salami", 18));
   }
 
   private void createPizzaOrderTestData() {
