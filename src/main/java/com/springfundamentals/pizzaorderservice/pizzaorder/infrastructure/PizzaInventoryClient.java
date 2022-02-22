@@ -1,4 +1,4 @@
-package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.infrastructure;
+package com.springfundamentals.pizzaorderservice.pizzaorder.infrastructure;
 
 public interface PizzaInventoryClient {
 

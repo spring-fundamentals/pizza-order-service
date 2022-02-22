@@ -1,14 +1,14 @@
-package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.service;
+package com.springfundamentals.pizzaorderservice.pizzaorder.service;
 
 import static java.util.stream.Collectors.toList;
 
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.api.CreatePizzaOrderDto;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.api.PizzaOrderDto;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.api.PizzaOrderItemDto;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrderItem;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.infrastructure.PizzaInventoryClient;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.infrastructure.PizzaOrderRepository;
+import com.springfundamentals.pizzaorderservice.pizzaorder.api.CreatePizzaOrderDto;
+import com.springfundamentals.pizzaorderservice.pizzaorder.api.PizzaOrderDto;
+import com.springfundamentals.pizzaorderservice.pizzaorder.api.PizzaOrderItemDto;
+import com.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
+import com.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrderItem;
+import com.springfundamentals.pizzaorderservice.pizzaorder.infrastructure.PizzaInventoryClient;
+import com.springfundamentals.pizzaorderservice.pizzaorder.infrastructure.PizzaOrderRepository;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.stereotype.Service;

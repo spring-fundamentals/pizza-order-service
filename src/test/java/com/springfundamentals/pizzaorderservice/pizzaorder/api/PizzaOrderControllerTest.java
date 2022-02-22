@@ -1,6 +1,6 @@
-package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.api;
+package com.springfundamentals.pizzaorderservice.pizzaorder.api;
 
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.service.PizzaOrderService;
+import com.springfundamentals.pizzaorderservice.pizzaorder.service.PizzaOrderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
