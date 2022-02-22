@@ -1,8 +1,8 @@
-package com.swisscom.springfundamentals.pizzaorderservice.common.testdata;
+package com.springfundamentals.pizzaorderservice.common.testdata;
 
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.dataaccess.PizzaOrderRepository;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrderItem;
+import com.springfundamentals.pizzaorderservice.pizzaorder.dataaccess.PizzaOrderRepository;
+import com.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
+import com.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrderItem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;

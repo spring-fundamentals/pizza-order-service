@@ -1,4 +1,4 @@
-package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.dataaccess;
+package com.springfundamentals.pizzaorderservice.pizzaorder.dataaccess;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

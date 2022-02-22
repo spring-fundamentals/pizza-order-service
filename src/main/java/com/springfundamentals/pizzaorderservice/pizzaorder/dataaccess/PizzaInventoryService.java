@@ -1,4 +1,4 @@
-package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.dataaccess;
+package com.springfundamentals.pizzaorderservice.pizzaorder.dataaccess;
 
 public interface PizzaInventoryService {
 

@@ -1,4 +1,4 @@
-package com.swisscom.springfundamentals.pizzaorderservice.common.exceptionhandling;
+package com.springfundamentals.pizzaorderservice.common.exceptionhandling;
 
 public class ApplicationException extends RuntimeException {
 

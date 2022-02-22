@@ -1,16 +1,17 @@
-package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.service;
+package com.springfundamentals.pizzaorderservice.pizzaorder.service;
 
 import static java.util.stream.Collectors.toList;
 
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.controller.CreatePizzaOrderDto;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.controller.PizzaOrderDto;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.controller.PizzaOrderItemDto;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.dataaccess.PizzaInventoryService;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.dataaccess.PizzaOrderRepository;
-import com.swisscom.springfundamentals.pizzaorderservice.common.exceptionhandling.ResourceNotFoundException;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrderItem;
-import com.swisscom.springfundamentals.pizzaorderservice.common.exceptionhandling.ApplicationException;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
+import com.springfundamentals.pizzaorderservice.common.exceptionhandling.ApplicationException;
+import com.springfundamentals.pizzaorderservice.common.exceptionhandling.ResourceNotFoundException;
+import com.springfundamentals.pizzaorderservice.pizzaorder.controller.CreatePizzaOrderDto;
+import com.springfundamentals.pizzaorderservice.pizzaorder.controller.PizzaOrderDto;
+import com.springfundamentals.pizzaorderservice.pizzaorder.dataaccess.PizzaInventoryService;
+import com.springfundamentals.pizzaorderservice.pizzaorder.dataaccess.PizzaOrderRepository;
+import com.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
+import com.springfundamentals.pizzaorderservice.pizzaorder.controller.PizzaOrderItemDto;
+import com.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrderItem;
+
 import java.util.List;
 
 import org.springframework.stereotype.Service;

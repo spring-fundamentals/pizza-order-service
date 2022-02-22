@@ -1,6 +1,7 @@
-package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.controller;
+package com.springfundamentals.pizzaorderservice.pizzaorder.controller;
 
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.service.PizzaOrderService;
+import com.springfundamentals.pizzaorderservice.pizzaorder.service.PizzaOrderService;
+
 import java.util.List;
 import java.util.Optional;
 import org.springframework.web.bind.annotation.GetMapping;
