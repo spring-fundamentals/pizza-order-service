@@ -1,6 +1,6 @@
-package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.api;
+package com.springfundamentals.pizzaorderservice.pizzaorder.api;
 
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.service.PizzaOrderService;
+import com.springfundamentals.pizzaorderservice.pizzaorder.service.PizzaOrderService;
 
 import java.util.List;
 import java.util.Optional;

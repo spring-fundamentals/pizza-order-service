@@ -1,4 +1,4 @@
-package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.api;
+package com.springfundamentals.pizzaorderservice.pizzaorder.api;
 
 public class PizzaOrderItemDto {
 
