@@ -1,11 +1,11 @@
-package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.api;
+package com.springfundamentals.pizzaorderservice.pizzaorder.api;
 
 import java.util.List;
 
 public class PizzaOrderDto {
 
-    private String orderId;
-    private List<PizzaOrderItemDto> orderItems;
+    private final String orderId;
+    private final List<PizzaOrderItemDto> orderItems;
 
     public PizzaOrderDto(String orderId, List<PizzaOrderItemDto> orderItems) {
         this.orderId = orderId;

@@ -1,12 +1,12 @@
-package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain;
+package com.springfundamentals.pizzaorderservice.pizzaorder.domain;
 
 import java.util.List;
 import java.util.UUID;
 
 public class PizzaOrder {
 
-  private UUID id;
-  private List<PizzaOrderItem> orderItems;
+  private final UUID id;
+  private final List<PizzaOrderItem> orderItems;
 
   public PizzaOrder(List<PizzaOrderItem> orderItems) {
     this.id = UUID.randomUUID();

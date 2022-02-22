@@ -1,9 +1,10 @@
-package com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.dataaccess;
+package com.springfundamentals.pizzaorderservice.pizzaorder.dataaccess;
 
 import static java.util.Arrays.asList;
 
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
-import com.swisscom.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrderItem;
+import com.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrder;
+import com.springfundamentals.pizzaorderservice.pizzaorder.domain.PizzaOrderItem;
+
 import java.util.ArrayList;
 import java.util.List;
 
