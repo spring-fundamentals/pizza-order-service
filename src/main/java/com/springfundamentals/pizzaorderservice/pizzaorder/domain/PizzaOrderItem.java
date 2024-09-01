@@ -1,8 +1,8 @@
 package com.springfundamentals.pizzaorderservice.pizzaorder.domain;
 
 import java.util.UUID;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class PizzaOrderItem {
