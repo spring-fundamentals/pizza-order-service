@@ -12,6 +12,7 @@ import com.springfundamentals.pizzaorderservice.pizzaorder.controller.PizzaOrder
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 import static java.util.stream.Collectors.toList;
 
@@ -47,7 +48,7 @@ public class PizzaOrderService {
   }
 
   public PizzaOrderDto findById(String id) {
-    return pizzaOrderRepository.findById(id)
+    return pizzaOrderRepository.findById(UUID.fromString(id))
         .map(this::mapToPizzaOrderDto)
         .orElseThrow(ResourceNotFoundException::new);
   }
